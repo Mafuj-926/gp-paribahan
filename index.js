@@ -73,12 +73,16 @@ applyBtn.addEventListener('click', function(){
             const discountAmount = totalPrice * 0.15;
             const grandPrice = totalPrice - discountAmount;
             discountElement.innerText = grandPrice;
+            const removeApply = document.getElementById('input-apply-area');
+            removeApply.classList.add("hidden");
         }
         else if(couponCode === "Couple 20"){
             const discountElement = document.getElementById('grand-price');
             const discountAmount = totalPrice * 0.2;
             const grandPrice = totalPrice - discountAmount;
             discountElement.innerText = grandPrice;
+            const removeApply = document.getElementById('input-apply-area');
+            removeApply.classList.add("hidden");
         }
         else{
             alert("Invalid coupon")
@@ -87,4 +91,18 @@ applyBtn.addEventListener('click', function(){
     else{
         alert('please atleast buy 4 tickets to get discount');
     }
+})
+
+const nextBtn = document.getElementById('next-btn');
+nextBtn.addEventListener('click', function(){
+    
+        const firstPage = document.getElementById('first-page');
+        firstPage.classList.add("hidden")
+        const secondPage = document.getElementById('second-page');
+        secondPage.classList.remove("hidden")
+})
+const continueBtn = document.getElementById('continue-btn');
+continueBtn.addEventListener('click', function(){
+    const firstPage = document.getElementById('first-page');
+    firstPage.classList.remove("hidden")
 })
